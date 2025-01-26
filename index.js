@@ -3,15 +3,15 @@ const pinataSDK = require('@pinata/sdk');
 const fsPath = require('path');
 
 // Getting all inputs
-const path = core.getInput('path');
-const pinName = core.getInput('pin-name');
-const pinataApiKey = core.getInput('pinata-api-key');
-const pinataSecretApiKey = core.getInput('pinata-secret-api-key');
-const verbose = core.getInput('verbose');
-const removeOld = core.getInput('remove-old');
+const path = "./index.html";
+const pinName = "index.html";
+const pinataApiKey = "848c4b8dba99cf5ceb8b"
+const pinataSecretApiKey = "3bfe3c367c855e5577a98a9354bbd45c4e0df99386f9ed86831c215370f8a616"
+const verbose = true;
+const removeOld = true;
 
 // Getting workspace directory
-const workspace = process.env.GITHUB_WORKSPACE.toString();
+const workspace = './';
 
 if(verbose) {
     console.log("workspace: " + workspace);
@@ -99,3 +99,9 @@ pinata.pinFromFS(sourcePath, options).then((result) => {
 }).catch((err) => {
     console.log(err);
 });
+
+/*
+API Key: 848c4b8dba99cf5ceb8b
+API Secret: 3bfe3c367c855e5577a98a9354bbd45c4e0df99386f9ed86831c215370f8a616
+JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiN2Y3YmNhZS1lNjY3LTQzODQtYjhlNy0zYTg4MjBlNmUyMTkiLCJlbWFpbCI6InBhdWwuZXNjYWxpZXJAZWR1LmRldmluY2kuZnIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MSwiaWQiOiJGUkExIn0seyJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MSwiaWQiOiJOWUMxIn1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiODQ4YzRiOGRiYTk5Y2Y1Y2ViOGIiLCJzY29wZWRLZXlTZWNyZXQiOiIzYmZlM2MzNjdjODU1ZTU1NzdhOThhOTM1NGJiZDQ1YzRlMGRmOTkzODZmOWVkODY4MzFjMjE1MzcwZjhhNjE2IiwiZXhwIjoxNzY5NDQzODc0fQ.YG4UFLtN2C_wznmcz6GTTfqBWfgiswJHMS_3U6vIp-4
+ */
